@@ -34,12 +34,59 @@ export default {
       /**
        * @type {google.maps.Map}
        */
+
+      let mapStyle = [
+        {
+          "featureType": "administrative",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "labels.icon",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "transit",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        }
+      ];
+
+      let styledMap = new google.maps.StyledMapType(mapStyle, {name: 'fvm_map'});
+
       map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -0.294591, lng: 73.4198885},
         zoom: 15,
         mapTypeId: 'terrain',
         disableDefaultUI: true,
+        mapTypeControlOptions: {
+          mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+            'fvm_map']
+        }
       });
+
+      map.mapTypes.set('fvm_map', styledMap);
+      map.setMapTypeId('fvm_map');
 
       // infoWindow = new google.maps.InfoWindow;
 
