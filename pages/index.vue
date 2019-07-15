@@ -37,15 +37,6 @@ export default {
 
       let mapStyle = [
         {
-          "featureType": "administrative",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
           "featureType": "poi",
           "stylers": [
             {
@@ -53,23 +44,6 @@ export default {
             }
           ]
         },
-        {
-          "featureType": "road",
-          "elementType": "labels.icon",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
-          "featureType": "transit",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        }
       ];
 
       let styledMap = new google.maps.StyledMapType(mapStyle, {name: 'fvm_map'});
