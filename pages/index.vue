@@ -20,8 +20,9 @@ export default {
     let scriptLoaded = document.getElementById('gMapsScript');
 
     if (scriptLoaded === null) {
+      let apiKey = process.env.GOOGLE_MAPS_API_KEY;
       let googleMapScript = document.createElement('script');
-      googleMapScript.src = '//maps.googleapis.com/maps/api/js?key=AIzaSyClfxQF-JQmsxueQbKW36yRy_t-w2_1r04';
+      googleMapScript.src = `//maps.googleapis.com/maps/api/js?key=${apiKey}`;
       googleMapScript.id = 'gMapsScript';
       googleMapScript.onload = this.initMap;
       document.getElementsByTagName('head')[0].appendChild(googleMapScript);
