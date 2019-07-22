@@ -15,7 +15,34 @@ import SearchBar from "~/components/SearchBar";
 let map;
 export default {
   components: {SearchBar},
+
+  data() {
+    return {
+      form: {
+        grant_type: 'password',
+        client_id: 2,
+        client_secret: 'XAIhss9KEVnvfXlauXtNmdUFzAt6Y9cUxnsxUw1a',
+        username: 'waddayhassan@gmail.com',
+        password: 'nothing',
+        scope: ''
+      },
+      access_token: null
+    }
+  },
+
+  computed: {
+    header() {
+      return {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.access_token
+      }
+    }
+  },
   mounted() {
+
+    //TODO:: remove this after client setups
+    this.loginUser();
 
     let scriptLoaded = document.getElementById('gMapsScript');
 
@@ -69,6 +96,16 @@ export default {
       // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
       // script.src = '/data';
       // document.getElementsByTagName('head')[0].appendChild(script);
+    },
+
+    async loginUser() {
+      await this.$axios.$post('https://maps-api.app/oauth/token', this.form)
+        .then(result => {
+          console.log(result.access_token)
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   }
 }

@@ -37,13 +37,47 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
+
+  //TODO::
+  auth: {
+    strategies: {
+      'laravel.passport': {
+        url: '/oauth/token',
+        client_id: 2,
+        client_secret: 'XAIhss9KEVnvfXlauXtNmdUFzAt6Y9cUxnsxUw1a',
+        grant_type: 'password',
+        scope: ''
+      },
+      local: {
+        endpoints: {
+          login: { url: '/oauth/token', method: 'post', propertyName: 'token'},
+          logout: false,
+          user: { url: '/api/user', method: 'get', propertyName: 'data'},
+        },
+        tokenRequired: true,
+        tokenType: 'Bearer'
+      },
+      google: {
+        client_id: '138658380666-kme67vtockqt9ajqn9a3tft3drglv06l.apps.googleusercontent.com',
+        // client_secret: 'OMpWdELo3DDB40yYW9hEeGeG'
+      }
+    }
+  },
+
+  //TODO::
+  router: {
+    middleware: ['auth']
+  },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'https://maps-api.app'
   },
   /*
   ** Build configuration
