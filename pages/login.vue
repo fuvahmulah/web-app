@@ -4,7 +4,7 @@
       <input type="email" v-model="username">
       <input type="password" v-model="password">
     </form>
-    <button @click="google">Login</button>
+    <button @click="$auth.loginWith('laravel.passport')">Login</button>
   </div>
 </template>
 <script>
@@ -20,12 +20,6 @@
     mounted() {
     },
     methods: {
-      async google(){
-        await this.$auth.loginWith('google').catch(e => {
-          // this.$toast.show('Error', {icon: "fingerprint"});
-          console.log('google', e)
-        })
-      },
       async login() {
         try {
           await this.$auth.loginWith('laravel.passport', {
