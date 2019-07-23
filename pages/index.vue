@@ -2,6 +2,7 @@
   <div class="w-screen h-screen">
     <div id="map" class="w-full h-full"></div>
 
+    <explore></explore>
     <div class="absolute top-0 left-0 w-screen h-screen pointer-events-none">
       <div class="absolute bottom-0 flex w-full">
         <search-bar></search-bar>
@@ -12,9 +13,10 @@
 
 <script>
 import SearchBar from "~/components/SearchBar";
+import Explore from "../components/Explore";
 let map;
 export default {
-  components: {SearchBar},
+  components: {Explore, SearchBar},
 
   mounted() {
 
