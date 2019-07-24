@@ -1,6 +1,9 @@
 <template>
 <!--  <div class="w-screen h-screen bg-white flex ">-->
     <div class="absolute top-0 left-0  w-full bg-white h-full p-8 pt-10">
+      <button class="absolute right-0 top-0 mt-2 mr-2 p-2 rounded-full h-10 w-10" @click="$emit('close')">
+        <icon icon="close" class="text-gray-500"></icon>
+      </button>
       <h4 class="text-xl font-bold leading-none text-gray-800">Explore</h4>
       <h1 class="font-sans text-4xl font-bold leading-none text-gray-800 tracking-wide">Fuvahmulah</h1>
 
