@@ -1,11 +1,13 @@
 <template>
   <div class="w-screen h-screen">
     <div id="map" class="w-full h-full"></div>
+    <div class="fixed top-0 left-0  w-full bg-dim h-full" v-if="searching" @click="searching = false"></div>
+    <explore v-show="dashboard" @close="close"></explore>
 
-    <explore></explore>
+    <search-result></search-result>
     <div class="absolute top-0 left-0 w-screen h-screen pointer-events-none">
       <div class="absolute bottom-0 flex w-full">
-        <search-bar></search-bar>
+        <search-bar @blur="blur"></search-bar>
       </div>
     </div>
   </div>
@@ -14,10 +16,17 @@
 <script>
 import SearchBar from "~/components/SearchBar";
 import Explore from "../components/Explore";
+import SearchResult from "../components/SearchResult";
 let map;
 export default {
-  components: {Explore, SearchBar},
+  components: {SearchResult, Explore, SearchBar},
 
+  data() {
+    return {
+      dashboard: true,
+      searching: false
+    }
+  },
   mounted() {
 
     let scriptLoaded = document.getElementById('gMapsScript');
@@ -33,6 +42,13 @@ export default {
   },
 
   methods: {
+    blur() {
+      this.dashboard = false;
+      this.searching = true;
+    },
+    close() {
+      this.dashboard = false;
+    },
     initMap: () => {
       /**
        * @type {google.maps.Map}
