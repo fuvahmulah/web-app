@@ -1,6 +1,6 @@
 <template>
 <!--  <div class="w-screen h-screen bg-white flex ">-->
-    <div class="absolute top-0 left-0  w-full bg-white h-full p-6 ">
+    <div class="absolute top-0 left-0  w-full bg-white h-full p-8 pt-10">
       <h4 class="text-xl font-bold leading-none text-gray-800">Explore</h4>
       <h1 class="font-sans text-4xl font-bold leading-none text-gray-800 tracking-wide">Fuvahmulah</h1>
 
@@ -17,7 +17,7 @@
         <dashboard-icon title="Add Place" icon="marker" bg-color="bg-gray-500" icon-color="text-white"></dashboard-icon>
       </flex-row>
 
-      <div class="mt-6">
+      <div class="mt-12">
         <h4 class="text-xl font-bold leading-none text-gray-800 mb-6">Popular this week</h4>
 
         <card></card>
