@@ -9,7 +9,7 @@ module.exports = {
         lg: '0.5rem',
         xl: '1rem',
         full: '9999px',
-        'fvm': '1.5625rem',
+        'fvm': '20px',
       },
       boxShadow: {
         default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -28,6 +28,7 @@ module.exports = {
 
         black: '#000',
         white: '#fff',
+        'dim': 'rgba(0,0,0, 0.7)',
 
         gray: {
           100: '#f7fafc',
