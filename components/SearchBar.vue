@@ -16,7 +16,22 @@
     data() {
       return {
         keyword: null,
+        typing: false,
+        picked: false,
       }
+    },
+
+    watch: {
+      keyword: function(newVal, oldVal) {
+        this.typing = true;
+        if (!this.picked) {
+          // this.fetchLocations()
+        }
+      }
+    },
+
+    created() {
+      // this.fetchLocations = _.debounce()
     }
   }
 </script>

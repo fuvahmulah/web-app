@@ -3,7 +3,7 @@
     <div id="map" class="w-full h-full"></div>
     <div class="fixed top-0 left-0  w-full bg-dim h-full" v-if="searching" @click="searching = false"></div>
 <!--TODO:: dashbard/explore show-->
-    <button class="absolute mr-2 mt-2 right-0 top-0 rounded-full shadow-fvm" @click="dashboard = true">
+    <button class="absolute mr-2 mt-2 right-0 top-0 rounded-full shadow-fvm" @click="dashboard = true" v-if="!searching">
       <icon icon="android-menu" class="h-6 text-gray-600"></icon>
     </button>
     <explore v-show="dashboard" @close="close"></explore>
