@@ -8,10 +8,10 @@
     </button>
     <explore v-show="dashboard" @close="close"></explore>
 
-    <search-result v-if="searching"></search-result>
+    <search-result v-if="searching" :typing="userTyping"></search-result>
     <div class="absolute top-0 left-0 w-screen h-screen pointer-events-none">
       <div class="absolute bottom-0 flex w-full">
-        <search-bar @blur="blur"></search-bar>
+        <search-bar @blur="blur" @typing="typing"></search-bar>
       </div>
     </div>
 
@@ -30,7 +30,8 @@ export default {
   data() {
     return {
       dashboard: true,
-      searching: false
+      searching: false,
+      userTyping: false
     }
   },
   mounted() {
@@ -48,6 +49,9 @@ export default {
   },
 
   methods: {
+    typing(val) {
+      this.userTyping = val;
+    },
     blur() {
       this.dashboard = false;
       this.searching = true;
