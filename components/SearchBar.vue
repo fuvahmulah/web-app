@@ -10,6 +10,7 @@
 
 <script>
   import Icon from "./Icon";
+  import debounce from 'lodash.debounce';
   export default {
     name: 'SearchBar',
     components: {Icon},
@@ -18,6 +19,7 @@
         keyword: null,
         typing: false,
         picked: false,
+        searchResults: []
       }
     },
 
@@ -25,13 +27,39 @@
       keyword: function(newVal, oldVal) {
         this.typing = true;
         if (!this.picked) {
-          // this.fetchLocations()
+          this.fetchLocations()
+        }
+      },
+
+      typing: {
+        handler(val) {
+          this.$emit('typing', this.typing)
+        }
+      }
+    },
+
+    methods: {
+      getLocations() {
+        // this.typing = true
+        if (this.keyword && this.keyword.length > 0) {
+          this.$axios.$get(`/api/locations?keyword=${this.keyword}`)
+            .then(result => {
+              console.log(result)
+              this.typing = false;
+            })
+            .catch(error => {
+              console.log(error)
+              this.typing = false;
+            });
+        } else {
+          this.typing = false;
+          this.searchResults = [];
         }
       }
     },
 
     created() {
-      // this.fetchLocations = _.debounce()
+      this.fetchLocations = debounce(this.getLocations, 500);
     }
   }
 </script>
