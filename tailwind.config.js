@@ -21,6 +21,14 @@ module.exports = {
         outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
         'fvm': '0px 0px 30px 5px rgba(0, 0, 0, 0.20)',
         'balance': '0px 0px 10px 2px rgba(0, 0, 0, 0.15)',
+        'stay': '0 10px 25px -11px #35c7dc;',
+        'food': '0 10px 25px -11px #3aa6ff;',
+        'service': '0 10px 25px -11px #F80B5D;',
+        'attraction': '0 10px 25px -11px #FFB900;',
+        'shop': '0 10px 25px -11px #f56565;',
+        'masjid': '0 10px 25px -11px #31B353;',
+        'map': '0 10px 25px -11px #805ad5;',
+        'place': '0 10px 25px -11px #cbd5e0;',
         none: 'none',
       },
       colors: {
@@ -85,7 +93,8 @@ module.exports = {
           700: '#2f855a',
           800: '#276749',
           900: '#22543d',
-          'light': '#31B353'
+          'light': '#31B353',
+          'mid': '#35c7dc'
         },
         teal: {
           100: '#e6fffa',
@@ -108,7 +117,7 @@ module.exports = {
           700: '#2b6cb0',
           800: '#2c5282',
           900: '#2a4365',
-          'light': '#38b1c7',
+          'light': '#3aa6ff',
         },
         indigo: {
           100: '#ebf4ff',

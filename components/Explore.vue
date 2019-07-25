@@ -8,16 +8,16 @@
       <h1 class="font-sans text-4xl font-bold leading-none text-gray-800 tracking-wide">Fuvahmulah</h1>
 
       <flex-row>
-        <dashboard-icon title="Food" icon="cutlery" bg-color="bg-blue-500" icon-color="text-white"></dashboard-icon>
-        <dashboard-icon title="Attractions" icon="attraction" bg-color="bg-orange-light" icon-color="text-white"></dashboard-icon>
-        <dashboard-icon title="Shops" icon="shop" bg-color="bg-red-500" icon-color="text-white"></dashboard-icon>
-        <dashboard-icon title="Mosques" icon="mosque" bg-color="bg-green-light" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Food" icon="cutlery" bg-color="bg-blue-light shadow-food" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Attractions" icon="attraction" bg-color="bg-orange-light shadow-attraction" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Shops" icon="shop" bg-color="bg-red-500 shadow-shop" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Mosques" icon="mosque" bg-color="bg-green-light shadow-masjid" icon-color="text-white"></dashboard-icon>
       </flex-row>
       <flex-row>
-        <dashboard-icon title="Stay" icon="accommodation" bg-color="bg-blue-light" icon-color="text-white"></dashboard-icon>
-        <dashboard-icon title="Services" icon="telephone" bg-color="bg-pink-light" icon-color="text-white"></dashboard-icon>
-        <dashboard-icon title="Maps" icon="direction" bg-color="bg-purple-600" icon-color="text-white"></dashboard-icon>
-        <dashboard-icon title="Add Place" icon="marker" bg-color="bg-gray-500" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Stay" icon="accommodation" bg-color="bg-green-mid shadow-stay" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Services" icon="telephone" bg-color="bg-pink-light shadow-service" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Maps" icon="direction" bg-color="bg-purple-600 shadow-map" icon-color="text-white"></dashboard-icon>
+        <dashboard-icon title="Add Place" icon="marker" bg-color="bg-gray-400 shadow-place" icon-color="text-white"></dashboard-icon>
       </flex-row>
 
       <div class="mt-12">

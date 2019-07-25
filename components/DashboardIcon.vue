@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center flex-col w-1/5">
-    <div class="rounded-full h-16 w-16 flex items-center justify-center shadow-lg" :class="bgColor">
+    <div class="rounded-full h-16 w-16 flex items-center justify-center" :class="bgColor">
       <icon :icon="icon" class="fill h-8" :class="iconColor"></icon>
     </div>
     <h5 class="mt-2 text-sm font-medium text-gray-500">{{ title }}</h5>
