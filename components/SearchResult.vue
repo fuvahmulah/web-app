@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bottom-0 left-0  w-full h-auto p-8 pt-10 mb-16">
+  <div class="absolute bottom-0 left-0  w-full h-auto p-8 pt-3 mb-16">
     <h4 class="text-xl font-bold leading-none text-white mb-3">Search Results</h4>
     <div class="overflow-hidden rounded-fvm shadow-fvm border bg-white">
       <div class="flex items-center justify-between leading-none p-4">
