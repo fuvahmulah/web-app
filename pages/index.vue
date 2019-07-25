@@ -2,14 +2,19 @@
   <div class="w-screen h-screen">
     <div id="map" class="w-full h-full"></div>
     <div class="fixed top-0 left-0  w-full bg-dim h-full" v-if="searching" @click="searching = false"></div>
+<!--TODO:: dashbard/explore show-->
+    <button class="absolute mr-2 mt-2 right-0 top-0 rounded-full shadow-fvm" @click="dashboard = true">
+      <icon icon="android-menu" class="h-6 text-gray-600"></icon>
+    </button>
     <explore v-show="dashboard" @close="close"></explore>
 
-    <search-result></search-result>
+    <search-result v-if="searching"></search-result>
     <div class="absolute top-0 left-0 w-screen h-screen pointer-events-none">
       <div class="absolute bottom-0 flex w-full">
         <search-bar @blur="blur"></search-bar>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -17,9 +22,10 @@
 import SearchBar from "~/components/SearchBar";
 import Explore from "../components/Explore";
 import SearchResult from "../components/SearchResult";
+import Icon from "../components/Icon";
 let map;
 export default {
-  components: {SearchResult, Explore, SearchBar},
+  components: {Icon, SearchResult, Explore, SearchBar},
 
   data() {
     return {
