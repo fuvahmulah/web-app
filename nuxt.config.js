@@ -53,45 +53,12 @@ module.exports = {
         tokenRequired: true,
         tokenType: 'Bearer'
       },
-      'laravel.passport': {
-              url: '/oauth/token',
-              client_id: process.env.PASSPORT_CLIENT_ID,
-              client_secret: process.env.PASSPORT_CLIENT_SECRET,
-              grant_type: process.env.PASSPORT_GRANT_TYPE,
-              scope: '*',
-              redirect_uri: 'http://localhost:3000/callback',
-            },
     },
     redirect: {
       login: '/?login=1',
       logout: '/',
     }
   },
-  // auth: {
-  //   strategies: {
-  //     'laravel.passport': {
-  //       url: '/oauth/token',
-  //       client_id: process.env.PASSPORT_CLIENT_ID,
-  //       client_secret: process.env.PASSPORT_CLIENT_SECRET,
-  //       grant_type: process.env.PASSPORT_GRANT_TYPE,
-  //       scope: ''
-  //     },
-  //     local: {
-  //       endpoints: {
-  //         login: { url: '/oauth/token', method: 'post', propertyName: 'token'},
-  //         logout: false,
-  //         user: { url: '/api/user', method: 'get', propertyName: 'data'},
-  //       },
-  //       tokenRequired: true,
-  //       tokenType: 'Bearer'
-  //     },
-  //     // google: {
-  //     //   client_id: '138658380666-kme67vtockqt9ajqn9a3tft3drglv06l.apps.googleusercontent.com',
-  //     //   user:false,
-  //     //   redirect_uri:'http://localhost:3000/login/google/callback'
-  //     // }
-  //   }
-  // },
 
   //TODO::
   router: {
