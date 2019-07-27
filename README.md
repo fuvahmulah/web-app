@@ -1,5 +1,5 @@
 # maps
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 > Fuvahmulah map
 
@@ -31,6 +31,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/wadday"><img src="https://avatars2.githubusercontent.com/u/194339?v=4" width="100px;" alt="Wadday hassan"/><br /><sub><b>Wadday hassan</b></sub></a><br /><a href="https://github.com/fuvahmulah/web-app/commits?author=wadday" title="Code">💻</a> <a href="#design-wadday" title="Design">🎨</a></td>
+    <td align="center"><a href="http://www.reallynattu.com"><img src="https://avatars0.githubusercontent.com/u/2539454?v=4" width="100px;" alt="Nattu Adnan"/><br /><sub><b>Nattu Adnan</b></sub></a><br /><a href="#design-reallynattu" title="Design">🎨</a></td>
   </tr>
 </table>
 
