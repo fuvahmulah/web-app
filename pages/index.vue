@@ -1,20 +1,39 @@
 <template>
   <div class="w-screen h-screen">
     <div id="map" class="w-full h-full"></div>
+    <div class="fixed top-0 left-0  w-full bg-dim h-full" v-if="searching" @click="searching = false"></div>
+<!--TODO:: dashbard/explore show-->
+    <button class="absolute mr-2 mt-2 right-0 top-0 rounded-full shadow-fvm" @click="dashboard = true" v-if="!searching">
+      <icon icon="android-menu" class="h-6 text-gray-600"></icon>
+    </button>
+    <explore v-show="dashboard" @close="close"></explore>
 
+    <search-result v-if="searching" :typing="userTyping"></search-result>
     <div class="absolute top-0 left-0 w-screen h-screen pointer-events-none">
       <div class="absolute bottom-0 flex w-full">
-        <search-bar></search-bar>
+        <search-bar @blur="blur" @typing="typing"></search-bar>
       </div>
     </div>
+
   </div>
 </template>
 
 <script>
 import SearchBar from "~/components/SearchBar";
+import Explore from "../components/Explore";
+import SearchResult from "../components/SearchResult";
+import Icon from "../components/Icon";
 let map;
 export default {
-  components: {SearchBar},
+  components: {Icon, SearchResult, Explore, SearchBar},
+
+  data() {
+    return {
+      dashboard: true,
+      searching: false,
+      userTyping: false
+    }
+  },
   mounted() {
 
     let scriptLoaded = document.getElementById('gMapsScript');
@@ -30,6 +49,16 @@ export default {
   },
 
   methods: {
+    typing(val) {
+      this.userTyping = val;
+    },
+    blur() {
+      this.dashboard = false;
+      this.searching = true;
+    },
+    close() {
+      this.dashboard = false;
+    },
     initMap: () => {
       /**
        * @type {google.maps.Map}
@@ -69,7 +98,7 @@ export default {
       // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
       // script.src = '/data';
       // document.getElementsByTagName('head')[0].appendChild(script);
-    }
+    },
   }
 }
 </script>
