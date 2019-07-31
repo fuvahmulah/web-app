@@ -9,10 +9,10 @@
     </button>
     <explore v-show="dashboard" @close="close"></explore>
 
-    <search-result v-if="searching" :typing="userTyping"></search-result>
+    <search-result v-if="searching" :typing="userTyping" :results="results"></search-result>
     <div class="absolute top-0 left-0 w-screen h-screen pointer-events-none">
       <div class="absolute bottom-0 flex w-full">
-        <search-bar @blur="blur" @typing="typing"></search-bar>
+        <search-bar @blur="blur" @typing="typing" @results="searchResult"></search-bar>
       </div>
     </div>
 
@@ -26,13 +26,15 @@ import SearchResult from "../components/SearchResult";
 import Icon from "../components/Icon";
 let map;
 export default {
+  name: 'Index',
   components: {Icon, SearchResult, Explore, SearchBar},
 
   data() {
     return {
       dashboard: true,
       searching: false,
-      userTyping: false
+      userTyping: false,
+      results: []
     }
   },
   mounted() {
@@ -50,6 +52,9 @@ export default {
   },
 
   methods: {
+    searchResult(results) {
+      this.results = results;
+    },
     typing(val) {
       this.userTyping = val;
     },

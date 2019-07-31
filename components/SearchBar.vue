@@ -41,19 +41,20 @@
     methods: {
       getLocations() {
         // this.typing = true
+
         if (this.keyword && this.keyword.length > 0) {
+
           this.$axios.$get(`/api/locations?keyword=${this.keyword}`)
             .then(result => {
-              console.log(result)
+              this.$emit('results', result)
               this.typing = false;
             })
-            .catch(error => {
-              console.log(error)
+            .catch(() => {
               this.typing = false;
             });
         } else {
+          this.$emit('results', [])
           this.typing = false;
-          this.searchResults = [];
         }
       }
     },
