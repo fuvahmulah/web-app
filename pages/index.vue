@@ -2,7 +2,7 @@
 
   <div class="w-screen h-screen">
 <!--        <div id="map" class="w-full h-full"></div>-->
-    <fvm-map :latitude="-0.294591" :longitude="73.4198885" :zoom="mapZoom"></fvm-map>
+    <fvm-map></fvm-map>
 
     <div class="fixed top-0 left-0  w-full bg-dim h-full" v-if="searching" @click="searching = false"></div>
 
