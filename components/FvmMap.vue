@@ -30,7 +30,7 @@
                     return 15
                 }
             },
-            neighbourLevel: {
+            neighboursTriggerLevel: {
                 type: Number,
                 required: false,
                 default: function() {
@@ -44,14 +44,14 @@
                 handler(val) {
                     map.setZoom(val);
                     this.zoomLevel = val;
-                    if (this.zoomLevel >= this.neighbourLevel) {
+                    if (this.zoomLevel >= this.neighboursTriggerLevel) {
                         this.fetch();
                     }
                 }
             },
             center: {
                 handler(val) {
-                    if (this.zoomLevel >= this.neighbourLevel) {
+                    if (this.zoomLevel >= this.neighboursTriggerLevel) {
                         this.fetch();
                     }
                 }
@@ -187,7 +187,7 @@
 
             this.clearNeighbour();
 
-            if (this.zoomLevel >= this.neighbourLevel) {
+            if (this.zoomLevel >= this.neighboursTriggerLevel) {
                 this.fetch();
             }
         }
