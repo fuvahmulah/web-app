@@ -106,7 +106,7 @@
                     neighbours.features.forEach(neighbour => {
                         let marker = new google.maps.Marker({
                             position: { lat: parseFloat( neighbour.latitude ), lng: parseFloat( neighbour.longitude ) },
-                            map: this.map
+                            map: map
                         });
                         this.markers.push( marker );
                     })
