@@ -47,7 +47,7 @@ module.exports = {
   auth: {
     strategies: {
       'laravel.passport': {
-        url: '//maps-api.app',
+        url: process.env.API_SERVER_ENDPOINT,
         client_id: process.env.PASSPORT_CLIENT_ID,
         client_secret: process.env.PASSPORT_CLIENT_SECRET,
         userinfo_endpoint: '/api/user',

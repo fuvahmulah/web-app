@@ -16,7 +16,7 @@ config.dev = !(process.env.NODE_ENV === 'production')
 
 app.post('/_auth/oauth/laravel.passport/authorize', function (req, res, next) {
   let response = null;
-  http.post(process.env.API_SERVER_ENDPOINT + 'oauth/token', {
+  http.post(process.env.API_SERVER_ENDPOINT + '/oauth/token', {
     grant_type: 'authorization_code',
     client_id: process.env.PASSPORT_CLIENT_ID,
     client_secret: process.env.PASSPORT_CLIENT_SECRET,
