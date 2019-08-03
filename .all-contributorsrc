@@ -23,6 +23,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "ajaaibu",
+      "name": "Ahmed Ali",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1146627?v=4",
+      "profile": "http://about.me/ajaaibu",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
