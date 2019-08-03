@@ -1,4 +1,6 @@
 
+require('dotenv').config()
+
 module.exports = {
   mode: 'universal',
   /*
@@ -28,8 +30,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: [],
   /*
   ** Nuxt.js modules
   */
@@ -38,31 +39,32 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/proxy',
   ],
-
   //TODO::
   auth: {
     strategies: {
-      local: {
-        endpoints: {
-          login: {url: '/oauth/token', method: 'post', propertyName: 'token' },
-          logout: false,
-          user: {url: '/user', method: 'get', propertyName: 'data'},
-        },
-        tokenRequired: true,
-        tokenType: 'Bearer'
+      'laravel.passport': {
+        url: '//maps-api.app',
+        client_id: process.env.PASSPORT_CLIENT_ID,
+        client_secret: process.env.PASSPORT_CLIENT_SECRET,
+        userinfo_endpoint: '/api/user',
       },
     },
     redirect: {
-      login: '/?login=1',
+      login: '/login',
       logout: '/',
-    }
+      callback: '/callback',
+    },
+    plugins: ['~/plugins/auth.js']
   },
 
-  //TODO::
+  // //TODO::
   router: {
-    middleware: ['auth']
+    middleware: ['authenticated'],
+    // middleware: ['auth']
   },
 
   /*
@@ -70,7 +72,11 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://maps-api.app'
+    proxy: true,
+  },
+
+  proxy: {
+    '/api': 'http://127.0.0.1:8000'
   },
   /*
   ** Build configuration
